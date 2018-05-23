@@ -1,0 +1,177 @@
+# UniGlam
+Funções Universo do glamour
+/* Programa principal com o menu de opções do sistema*/
+
+/* Declaração das bibliotecas*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>
+
+int main() //Função principal
+{
+	/*Declaração de variáveis*/
+	setlocale(LC_ALL, "pt_BR.UTF-8"); //Muda para o padrão Português Brasil
+	int op = 0, op2 = 0; //Zera as variáveis do tipo inteiras
+	char nome[60], email[35], senha1[10], senha2[10]; //Estabelece o tamanho das strings 
+	
+	/*Início do código*/
+	do{
+		system("cls");
+		printf("Universo do Glamour\n\n\n");
+		printf("Digite 1 para acessar a conta \n");
+		printf("Digite 2 para acessar os servi%cos \n", 135);
+		printf("Digite 3 para ir ao carrinho de compras \n");
+		printf("Digite 4 para produtos \n");
+		printf("Digite 5 para informa%c%ces institucionais \n", 135, 228);
+		printf("Digite 6 para entrar em contato com a empresa \n");
+		printf("Digite 7 para o blog \n");
+		printf("Digite 8 para ajuda \n");
+		printf("Digite 9 para redes sociais \n");
+		printf("Digite 10 para acessar as formas de pagamento \n");				
+		printf("Digite 0 para sair \n");
+		printf("\nOpção escolhida: ");
+		scanf("%d", &op);
+		fflush(stdin);
+		switch (op){
+			case 1:
+				/*chama a função PgClientes, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgClientes.h)*/
+				system("cls");
+				printf("P%cgina do Cliente\n\n\n", 160);
+				printf("Digite 1 para entrar na conta \n");
+				printf("Digite 2 para cadastrar uma conta\n");
+				printf("Digite 0 para voltar ao menu principal \n");
+				printf("\nOp%c%co escolhida: ", 135, 198);
+				scanf("%d", &op2);
+			  	fflush(stdin);				
+				switch (op2){
+				case 1:
+					do{
+						system("cls");
+						printf("P%cgina do Cliente\n\n\n", 160);
+						printf("Digite 0 para voltar \n\n");										
+						printf("Digite o e-mail: ");
+						gets(email);
+			  			fflush(stdin);
+						if (strlen(email)==1 && atoi(email) == 0) //E-mail de um só caracter volta ao menu principal
+							break;
+						else{
+							printf("Digite a senha: ");
+							/*Acessar um arquivo a parte para verificar se a senha digitada está correta */
+							strcpy(senha1, "elefante");
+							/* Será necessário usar uma máscara para ocultar o que o usuário digita, por exemplo '*'. */
+							gets(senha2);
+							if (strlen(senha2)==1 && atoi(senha2) == 0) //Senha de um só caracter volta ao menu principal
+								break;
+							else{
+								if (strcmp(senha2, senha1)==0){ //Compara a senha digitada com a arquivada
+									system("cls");
+									printf("Bem-vindo");
+									system("pause");
+								}	
+								else
+								{
+									printf("\n\nSenha incorreta");
+								}
+							}
+						}
+					} while (strcmp(senha2, senha1)!=0); //Enquanto as senhas não baterem repete-se o procedimento
+			  		fflush(stdin);					
+					break;
+				case 2:
+					system("cls");
+					printf("P%cgina do Cliente\n\n\n"), 160;					
+					printf("Digite o nome completo: ");
+					gets(nome);
+					fflush(stdin);
+					printf("Digite o endere%co: ", 135);								
+					system("pause");
+					break;
+				case 0:
+					break;				
+				default:
+					system("cls");
+					printf("Op%c%co inv%clida\n\n\n", 135, 198, 160); 
+				}
+				break;
+			case 2:
+				/*chama a função PgServ, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgServs.h)*/		
+				system("cls");
+				printf("P%cgina de Servi%cos\n\n\n", 160, 135);
+				system("pause");				
+				break;
+			case 3:
+				/*chama a função PgCarrinho, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgCarrinho.h)*/				
+				system("cls");
+				printf("P%cgina do carrinho de compras\n\n\n", 160);
+				system("pause");				
+				break;
+			case 4:
+				/*chama a função PgProds, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgProdutos.h)*/	
+				system("cls");
+				printf("P%cgina de produtos\n\n\n", 160);
+				system("pause");				
+				break;
+			case 5:
+				/*chama a função PgInstitut, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgInstitut.h)*/					
+				system("cls");
+				printf("P%cgina Institucional\n\n\n", 160);
+				system("pause");				
+				break;
+			case 6:
+				/*chama a função PgContato, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgContato.h)
+				- itens obrigatórios: telefone, e-mail, endereço
+				*/					
+				system("cls");
+				printf("P%cgina de contato\n\n\n", 160);
+				system("pause");				
+				break;
+			case 7:
+				/*chama a função PgBlog, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgBlog.h)*/							
+				system("cls");
+				printf("Blog\n\n\n");
+				system("pause");
+				break;
+			case 8:
+				/*chama a função PgHelp, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgHelp.h)*/											
+				system("cls");
+				printf("P%cgina de ajuda\n\n\n", 160);
+				system("pause");				
+				break;
+			case 9:
+				/*chama a função PgRedes, por exemplo, indicando
+				onde vão os includes o cabeçalho (PgRedes.h)*/														
+				system("cls");
+				printf("P%cgina das redes sociais\n\n\n", 160);
+				system("pause");				
+				break;
+			case 10:
+				/*Informa na tela as formas de pagamento*/
+				system("cls");
+				printf("Formas de pagamento\n\n\n");
+				printf("- Cart%co de d%cbito \n", 198, 130);
+				printf("- Cart%co de cr%cdito \n", 198, 130);
+				printf("- Boleto \n");
+				Sleep(2500);
+				break;
+			case 0:
+				system("cls");
+				printf("At%c logo!\n", 130);
+				Sleep(1500);
+				break;
+			default:
+				system("cls");
+				printf("Op%c%co inv%clida\n\n\n", 135, 198, 160);					  
+			  }		   
+	   } while (op !=0);	
+	return 0;
+}
+/* Fim do programa */
