@@ -8,6 +8,8 @@ Funções Universo do glamour
 #include <locale.h>
 #include <windows.h>
 
+/*Olá!*/
+
 int main() //Função principal
 {
 	/*Declaração de variáveis*/
