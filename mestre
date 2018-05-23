@@ -8,8 +8,6 @@ Funções Universo do glamour
 #include <locale.h>
 #include <windows.h>
 
-/*Olá!*/
-
 int main() //Função principal
 {
 	/*Declaração de variáveis*/
@@ -32,7 +30,7 @@ int main() //Função principal
 		printf("Digite 9 para redes sociais \n");
 		printf("Digite 10 para acessar as formas de pagamento \n");				
 		printf("Digite 0 para sair \n");
-		printf("\nOpção escolhida: ");
+		printf("\nOp%%co escolhida: ", 135, 198);
 		scanf("%d", &op);
 		fflush(stdin);
 		switch (op){
